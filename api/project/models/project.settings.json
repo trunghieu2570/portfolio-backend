@@ -1,24 +1,24 @@
 {
   "kind": "collectionType",
-  "collectionName": "posts",
+  "collectionName": "projects",
   "info": {
-    "name": "Post"
+    "name": "Project"
   },
   "options": {
     "increments": true,
     "timestamps": true
   },
   "attributes": {
-    "title": {
+    "name": {
       "type": "string"
     },
-    "slug": {
-      "type": "string"
+    "description": {
+      "type": "text"
     },
-    "content": {
+    "case_study": {
       "type": "richtext"
     },
-    "image": {
+    "feature_img": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
@@ -28,20 +28,6 @@
       ],
       "plugin": "upload",
       "required": false
-    },
-    "status": {
-      "type": "enumeration",
-      "enum": [
-        "drafted",
-        "published"
-      ]
-    },
-    "category": {
-      "model": "category",
-      "via": "posts"
-    },
-    "description": {
-      "type": "text"
     }
   }
 }
