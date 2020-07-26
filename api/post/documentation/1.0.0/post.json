@@ -525,9 +525,6 @@
           "title": {
             "type": "string"
           },
-          "slug": {
-            "type": "string"
-          },
           "content": {
             "type": "string"
           },
@@ -592,38 +589,6 @@
               }
             }
           },
-          "status": {
-            "type": "string",
-            "enum": [
-              "drafted",
-              "published"
-            ]
-          },
-          "category": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "slug": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "posts": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "description": {
             "type": "string"
           }
@@ -634,20 +599,7 @@
           "title": {
             "type": "string"
           },
-          "slug": {
-            "type": "string"
-          },
           "content": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string",
-            "enum": [
-              "drafted",
-              "published"
-            ]
-          },
-          "category": {
             "type": "string"
           },
           "description": {

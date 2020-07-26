@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/categories": {
+    "/config": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the config's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve config document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Category"
+                    "$ref": "#/components/schemas/Config"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Config"
         ],
         "parameters": [
           {
@@ -192,198 +192,16 @@
           }
         ]
       },
-      "post": {
-        "deprecated": false,
-        "description": "Create a new record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Category"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Category"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewCategory"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/categories/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "count": {
-                      "type": "integer"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Category"
-        ],
-        "parameters": []
-      }
-    },
-    "/categories/{id}": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Category"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Category"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      },
       "put": {
         "deprecated": false,
-        "description": "Update a record",
+        "description": "Update a single config record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve config document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Category"
+                  "$ref": "#/components/schemas/Config"
                 }
               }
             }
@@ -421,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Config"
         ],
         "requestBody": {
           "description": "",
@@ -429,30 +247,19 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCategory"
+                "$ref": "#/components/schemas/NewConfig"
               }
             }
           }
         },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
+        "parameters": []
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a record",
+        "description": "Delete a single config record",
         "responses": {
           "200": {
-            "description": "deletes a single record based on the ID supplied",
+            "description": "deletes a single config based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,26 +302,15 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Config"
         ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
+        "parameters": []
       }
     }
   },
   "components": {
     "schemas": {
-      "Category": {
+      "Config": {
         "required": [
           "id"
         ],
@@ -522,67 +318,33 @@
           "id": {
             "type": "string"
           },
-          "name": {
+          "greetingTitle": {
             "type": "string"
           },
-          "slug": {
+          "greetingSubtitle": {
             "type": "string"
           },
-          "description": {
+          "resumeDescription": {
             "type": "string"
           },
-          "posts": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "slug": {
-                  "type": "string"
-                },
-                "content": {
-                  "type": "string"
-                },
-                "image": {
-                  "type": "string"
-                },
-                "status": {
-                  "type": "string"
-                },
-                "category": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                }
-              }
-            }
+          "footer": {
+            "type": "string"
           }
         }
       },
-      "NewCategory": {
+      "NewConfig": {
         "properties": {
-          "name": {
+          "greetingTitle": {
             "type": "string"
           },
-          "slug": {
+          "greetingSubtitle": {
             "type": "string"
           },
-          "description": {
+          "resumeDescription": {
             "type": "string"
           },
-          "posts": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "footer": {
+            "type": "string"
           }
         }
       }
@@ -590,7 +352,7 @@
   },
   "tags": [
     {
-      "name": "Category"
+      "name": "Config"
     }
   ]
 }

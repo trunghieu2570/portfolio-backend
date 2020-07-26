@@ -12,9 +12,6 @@
     "title": {
       "type": "string"
     },
-    "slug": {
-      "type": "string"
-    },
     "content": {
       "type": "richtext"
     },
@@ -28,17 +25,6 @@
       ],
       "plugin": "upload",
       "required": false
-    },
-    "status": {
-      "type": "enumeration",
-      "enum": [
-        "drafted",
-        "published"
-      ]
-    },
-    "category": {
-      "model": "category",
-      "via": "posts"
     },
     "description": {
       "type": "text"

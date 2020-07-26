@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "configs",
+  "info": {
+    "name": "Config"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "greetingTitle": {
+      "type": "string"
+    },
+    "greetingSubtitle": {
+      "type": "text"
+    },
+    "resumeDescription": {
+      "type": "text"
+    },
+    "footer": {
+      "type": "text"
+    }
+  }
+}
